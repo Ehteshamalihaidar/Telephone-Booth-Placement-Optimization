@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telephone Booth Placement Optimization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: Gray;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #000000;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #FFA500;
+            margin-bottom: 20px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #FFA500;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            color: white;
+            line-height: 1.6;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .ppt-section {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Heading -->
+        <h1>Telephone Booth Placement Optimization</h1>
+
+        <!-- Problem Statement and Algorithm Identified -->
+        <h2>Problem Statement</h2>
+        <p>The objective is to place telephone booths across a city such that every house is within <strong>n meters</strong> of at least one booth. The goal is to determine the minimum number of booths needed and the optimal locations to ensure full coverage.</p>
+        <p>The challenge lies in satisfying the n-meter distance constraint for all houses while minimizing the number of booths. The city is represented as a grid or graph, with each node corresponding to a house, and the telephone booths are positioned strategically to cover the maximum number of houses with the least overlap.</p>
+        
+        <h2>Algorithm Identified (CSP/SEARCH)</h2>
+        <p>This optimization problem requires balancing coverage and efficiency, ensuring that each house is within the defined proximity to a booth while using the fewest possible resources.</p>
+        <p><strong>CSP Constraints:</strong></p>
+        <ul>
+            <li>Distance Constraint: Each house must be within n meters of at least one telephone booth.</li>
+            <li>Minimization Objective: Minimize the total number of booths while covering all houses.</li>
+        </ul>
+        <p><strong>Search Algorithm Options</strong></p>
+        <ul>
+            <li><strong>Greedy or Heuristic Search</strong> Used to find a feasible solution by placing booths close to houses and minimizing the number of booths.</li>
+            <li><strong>A* Algorithm:</strong> Explores different configurations of booth placements to minimize the total number while ensuring the coverage constraint is satisfied.</li>
+        </ul>
+
+        <!-- Embedded PowerPoint Presentation -->
+        <div class="ppt-section">
+            <h2>Presentation</h2>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSZDSV11gyYy1X5ejJFCrq75bmylOFGMoOXbxMOl4mblwz6sQyF4m5KsoT95IFmrW-jZHCaI3AhtPH5/embed?start=true&loop=true&delayms=10000" 
+                frameborder="0" width="800" height="450" allowfullscreen="true"></iframe>
+        </div>
+
+        <!-- Form for Booth Placement -->
+        <form method="POST">
+            <div class="form-group">
+                <label for="city_size">City Grid Size (e.g., 10)</label>
+                <input type="number" id="city_size" name="city_size" required>
+            </div>
+            <div class="form-group">
+                <label for="distance_constraint">Distance Constraint (e.g., 4)</label>
+                <input type="number" id="distance_constraint" name="distance_constraint" required>
+            </div>
+            <div class="form-group">
+                <label for="houses">House Locations (e.g., 1,1;4,4;7,7)</label>
+                <input type="text" id="houses" name="houses" required>
+            </div>
+            <button type="submit">Optimize Booth Placement</button>
+        </form>
+
+        <!-- Display results if booths exist -->
+        {% if booths %}
+            <p>Total Booths: {{ booths }}</p>
+            <img src="{{ image }}" alt="City Map">
+        {% endif %}
+    </div>
+</body>
+</html>

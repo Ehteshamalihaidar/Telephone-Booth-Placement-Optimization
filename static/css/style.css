@@ -1,0 +1,41 @@
+/* styles.css */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Heading styling */
+h1 {
+    color: white;
+    margin-top: 50px;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* Image styling */
+img {
+    width: 60%;
+    height: auto;
+    border: 5px solid #ccc;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: auto;
+}
